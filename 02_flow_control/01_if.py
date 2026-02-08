@@ -139,14 +139,47 @@ print(mensaje)
 # Ejercicio 1: Determinar el mayor de dos números
 # Pide al usuario que introduzca dos números y muestra un mensaje
 # indicando cuál es mayor o si son iguales
+x = float(input('Introduce numero X: '))
+y = float(input('Introduce numero Y: '))
+
+if x > y:
+  print(f'{x} es mayor que {y}')
+elif x < y:
+  print(f'{y} es mayor que {x}')
+else:
+  print(f'{x} es igual a {y}')
 
 # Ejercicio 2: Calculadora simple
 # Pide al usuario dos números y una operación (+, -, *, /)
 # Realiza la operación y muestra el resultado (maneja la división entre zero)
 
+x,y,z = input('Introduce la operacion que quieras hacer con 2 numeros: ').split()
+x = float(x)
+z = float(z)
+if y == '+':
+  print(x+z)
+elif y == '-':
+  print(x-z)
+elif y == '*':
+  print(x*z)
+elif y == '/':
+  if z == 0:
+    print('No se puede dividir un numero entre 0')
+  else:
+    print(x/z)
+
 # Ejercicio 3: Año bisiesto
 # Pide al usuario que introduzca un año y determina si es bisiesto.
 # Un año es bisiesto si es divisible por 4, excepto si es divisible por 100 pero no por 400.
+x = int(input('Introduce un ano para saber si es bisiesto: '))
+
+if x % 4 == 0:
+  if x % 100 == 0 and x % 400 != 0:
+    print('El ano no es bisiesto')
+  else:
+    print('El ano es bisiesto')
+else:
+  print('El ano no es bisiesto')
 
 # Ejercicio 4: Categorizar edades
 # Pide al usuario que introduzca una edad y la clasifique en:
@@ -155,3 +188,14 @@ print(mensaje)
 # - Adolescente (13-17 años)
 # - Adulto (18-64 años)
 # - Adulto mayor (65 años o más)
+x = int(input('Introduce tu edad: '))
+if 0 <= x <= 2:
+  print(f'Eres un bebe')
+elif 3 <= x <= 12:\
+  print(f'Nino')
+elif 13 <= x <= 17:
+  print(f'Adolescente')
+elif 18 <= x <= 64:
+  print(f'Adulto')
+elif x >= 65:
+  print(f'Adulto mayor')
