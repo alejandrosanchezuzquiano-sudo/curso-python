@@ -83,10 +83,24 @@ print(f"El número que has introducido es {numero}")
 # Ejercicio 1: Cuenta atrás
 # Imprime los números del 10 al 1 usando un bucle while.
 print("\nEjercicio 1:")
+x = 10
+while x >= 0:
+  print(x, end=" ")
+  x -= 1
+
 
 # Ejercicio 2: Suma de números pares (while)
 # Calcula la suma de los números pares entre 1 y 20 (inclusive) usando un bucle while.
 print("\nEjercicio 2:")
+x = 1
+suma = 0
+while x != 21:
+  if x % 2 == 1:
+    x += 1
+    continue
+  suma = suma + x
+  x += 1
+print(suma)
 
 # Ejercicio 3: Factorial de un número
 # Pide al usuario que introduzca un número entero positivo.
@@ -94,6 +108,18 @@ print("\nEjercicio 2:")
 # El factorial de un número entero positivo es el producto de todos los números del 1 al ese número. Por ejemplo, el factorial de 5
 # 5! = 5 x 4 x 3 x 2 x 1 = 120.
 print("\nEjercicio 3:")
+x = -1
+while x < 0:
+  try:
+    x = int(input('Introduce un numero entero positivo: '))
+  except:
+    print('Debes de introducir un numero')
+factorial = x
+while x != 1:
+  x -= 1
+  factorial = factorial * x
+print(factorial)
+
 
 # Ejercicio 4: Validación de contraseña
 # Pide al usuario que introduzca una contraseña.
@@ -101,13 +127,46 @@ print("\nEjercicio 3:")
 # Usa un bucle while para seguir pidiendo la contraseña hasta que cumpla con los requisitos.
 # Si la contraseña es válida, imprime "Contraseña válida".
 print("\nEjercicio 4:")
+contraseña = input('Introduce una contraseña con al menos 8 caracteres: ')
+while len(contraseña) < 8:
+  contraseña = input('La contraseña debe de tener al menos 8 caracteres: ')
+
+print(f'Su contraseña es {contraseña}')
 
 # Ejercicio 5: Tabla de multiplicar
 # Pide al usuario que introduzca un número.
 # Imprime la tabla de multiplicar de ese número (del 1 al 10) usando un bucle while.
 print("\nEjercicio 5:")
+x = -1
+while x < 0:
+  try:
+    x = int(input('Introduce un numero entero positivo para calcular su tabla de multiplicar: '))
+  except:
+    print('Debes de introducir un numero')
+y = 1
+while y <= 10:
+  print(f'{x} por {y} =',x*y)
+  y += 1
 
 # Ejercicio 6: Números primos hasta N
 # Pide al usuario que introduzca un número entero positivo N.
 # Imprime todos los números primos menores o iguales que N usando un bucle while.
 print("\nEjercicio 6:")
+N = -1
+while N < 0:
+  try:
+    N = int(input('Introduce un numero entero positivo N: '))
+  except:
+    print('Debes de introducir un numero')
+x = 0
+while x <= N:
+  Es_Primo = True
+  divisor = 2
+  while divisor * divisor <= x:
+    if x % divisor == 0:
+      Es_Primo = False
+      break
+    divisor += 1
+  if Es_Primo:
+    print(x, end=" ")
+  x += 1
